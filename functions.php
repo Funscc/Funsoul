@@ -1,37 +1,35 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-
 function themeConfig($form) {
-
 //置顶文章CID
     $sticky = new Typecho_Widget_Helper_Form_Element_Text('sticky', NULL, 99, _t('置顶文章'), _t('在这里填入一个你想指定的文章CID'));
     $form->addInput($sticky);
+//文章底部说明
     $Ptag = new Typecho_Widget_Helper_Form_Element_Text('Ptag1', NULL, NULL, _t('文章和页面正文底部说明文字1'), _t('在这里填入显示文字/支持Html'));
     $form->addInput($Ptag);
     $Ptag = new Typecho_Widget_Helper_Form_Element_Text('Ptag2', NULL, NULL, _t('文章和页面正文底部说明文字2'), _t('在这里填入显示文字/支持Html'));
     $form->addInput($Ptag);
+//顶部广告
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('adFile', NULL, NULL, _t('顶部Banner广告'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('adUrl', NULL, NULL, _t('顶部Banner广告链接'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
+//底部广告
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('ShowFootAdFile', NULL, NULL, _t('首页底部Banner广告'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('ShowFootAdUrl', NULL, NULL, _t('首页底部Banner广告链接'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
-
-
+//文章正文底部广告
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('P1File', NULL, NULL, _t('Post正文底部广告'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('P1Url', NULL, NULL, _t('Post正文底部广告链接1'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
-
+//页面正文底部广告
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('Pa1File', NULL, NULL, _t('Page正文底部广告1'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('Pa1Url', NULL, NULL, _t('Page正文底部广告链接1'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
-
-
-
+//侧边栏广告
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar1File', NULL, NULL, _t('侧边栏广告1'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar1Url', NULL, NULL, _t('侧边栏广告链接1'), _t('在这里填入一个链接地址'));
@@ -52,7 +50,6 @@ function themeConfig($form) {
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar5Url', NULL, NULL, _t('侧边栏广告链接5'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
-
     $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar6File', NULL, NULL, _t('侧边栏广告6'), _t('在这里填入一个图片URL地址'));
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar6Url', NULL, NULL, _t('侧边栏广告链接6'), _t('在这里填入一个链接地址'));
@@ -69,6 +66,7 @@ function themeConfig($form) {
     $form->addInput($logoUrl);
     $adUrl = new Typecho_Widget_Helper_Form_Element_Text('Sidebar9Url', NULL, NULL, _t('侧边栏广告链接9'), _t('在这里填入一个链接地址'));
     $form->addInput($adUrl);
+//后台开启关闭隐藏显示设置
     $sidebarBlock = new Typecho_Widget_Helper_Form_Element_Checkbox('sidebarBlock',
     array('ShowHeadAd' => _t('显示顶部广告'),
     'ShowFootAd' => _t('显示首页底部广告'),
@@ -85,9 +83,10 @@ function themeConfig($form) {
     'ShowSidebarAd9' => _t('显示侧边栏广告9')),
     array('ShowHeadAd','ShowFootAd', 'ShowP1Ad', 'ShowPa1Ad','ShowSidebarAd1','ShowSidebarAd2', 'ShowSidebarAd3', 'ShowSidebarAd4','ShowSidebarAd5', 'ShowSidebarAd6', 'ShowSidebarAd7', 'ShowSidebarAd8', 'ShowSidebarAd9'), _t('侧边栏显示'));
     $form->addInput($sidebarBlock->multiMode());
+//文章略缩图
 $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
         'showon'=>'有图文章显示缩略图，无图文章随机显示缩略图',
-        'Showimg' => '有图文章显示缩略图，无图文章只显示一张固定的缩略图',      
+        'Showimg' => '有图文章显示缩略图，无图文章只显示一张固定的缩略图',
         'showoff' => '有图文章显示缩略图，无图文章则不显示缩略图',
         'allsj' => '所有文章一律显示随机缩略图',
         'guanbi' => '关闭所有缩略图显示'
@@ -96,23 +95,23 @@ $slimg = new Typecho_Widget_Helper_Form_Element_Select('slimg', array(
     $form->addInput($slimg->multiMode());
 }
 
-// 文章略缩图
+// 文章略缩图详细配置
 function themeFields($layout) {
     $thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb', NULL, NULL, _t('自定义缩略图'), _t('输入缩略图地址(仅文章有效)'));
     $layout->addItem($thumb);
 }
 /** 输出文章缩略图 */
 function showThumbnail($widget)
-{ 
+{
     // 当文章无图片时的默认缩略图
     $dir = './usr/themes/Funsoul/img/sj/';//随机缩略图目录
     $n=sizeof(scandir($dir))-2;
     if($n <= 0){
     $n=3;
     }// 异常处理，干掉自动判断图片数量的功能，切换至手动
-    $rand = rand(1,$n); 
+    $rand = rand(1,$n);
     // 随机 n张缩略图
- 
+
     $random = $widget->widget('Widget_Options')->themeUrl . '/img/sj/' . $rand . '.jpg'; // 随机缩略图路径
 if(Typecho_Widget::widget('Widget_Options')->slimg && 'Showimg'==Typecho_Widget::widget('Widget_Options')->slimg
 ){
@@ -121,7 +120,7 @@ if(Typecho_Widget::widget('Widget_Options')->slimg && 'Showimg'==Typecho_Widget:
 
 $cai = '';//这里可以添加图片后缀，例如七牛的缩略图裁剪规则，这里默认为空
     $attach = $widget->attachments(1)->attachment;
-    $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i'; 
+    $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i';
   $patternMD = '/\!\[.*?\]\((http(s)?:\/\/.*?(jpg|png))/i';
     $patternMDfoot = '/\[.*?\]:\s*(http(s)?:\/\/.*?(jpg|png))/i';
 if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
@@ -141,8 +140,8 @@ $ctu = $thumbUrl[1][0].$cai;
 if ($attach && $attach->isImage) {
 
 $ctu = $attach->url.$cai;
-    } 
-else 
+    }
+else
 
 if ($widget->tags) {
 foreach ($widget->tags as $tag) {
@@ -150,7 +149,7 @@ foreach ($widget->tags as $tag) {
     $ctu = './usr/themes/Funsoul/img/tag/' . $tag['slug'] . '.jpg';
 
     if(is_file($ctu))
-    { 
+    {
 $ctu = $widget->widget('Widget_Options')->themeUrl . '/img/tag/' . $tag['slug'] . '.jpg';
     }
     else
@@ -186,7 +185,7 @@ echo $ctu;
 }
 }
 //随机文章
-function getRandomPosts($limit = 10){    
+function getRandomPosts($limit = 10){
     $db = Typecho_Db::get();
     $result = $db->fetchAll($db->select()->from('table.contents')
         ->where('status = ?','publish')
@@ -211,7 +210,7 @@ function getRandomPosts($limit = 10){
         }
     }
 }
-//get_post_view($this)
+//文章浏览统计
 function get_post_view($archive)
 {
     $cid    = $archive->cid;
