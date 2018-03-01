@@ -1,4 +1,4 @@
-﻿body{background:#e9eaec;font-size:16px;color:#555}
+body{background:#e9eaec;font-size:16px;color:#555}
 a{color:#017e66}
 .yahei{font-family:Lato,Helvetica,Arial,Microsoft Yahei,sans-serif}
 .navbar-static-top{margin-bottom:20px;background:#fff url(../images/header-bg.gif) repeat-x bottom}
@@ -41,7 +41,9 @@ a{color:#017e66}
 .blog-main .breadcrumb {background:#fff;padding:16px 20px;border-radius:0;}
 .blog-main .blog-content{padding:25px;background:#fff;font-size:16px}
 .blog-main .blog-content p{font-size:16px;text-indent:32px}
-.blog-main .blog-content img{max-width:90%;height:auto}
+.blog-main .blog-content img{max-width:90%;height:auto;background: #fff;cursor: zoom-in;-webkit-transition: all 1s;-moz-transition: all 1s;transition: all 1s}
+.blog-main .blog-content img:active{cursor: zoom-out;transform: scale(1.4,1.4);-ms-transform: scale(1.4,1.4);-webkit-transform: scale(1.4,1.4);-o-transform: scale(1.4,1.4);-moz-transform: scale(1.4,1.4);-moz-box-shadow: 0 0 10px #fff;box-shadow: 0 0 10px #fff;
+}
 .blog-main .blog-content .idc4 img{max-width:100%;width:100%}
 .blog-main .blog-content p.rsstopimg{text-indent:0;text-align:center}
 .blog-main .blog-content p.rsstopimg img{border-radius:6px}
@@ -104,7 +106,7 @@ a{color:#017e66}
 .atwho-view small{font-size:smaller;color:#777;font-weight:400}
 #detail,p#posthidden{display:none}
 .codex{background:#fff;border:1px solid #eee;margin-bottom:20px;padding:1px}
-.codex h2.codexh2{background-color:#64a100;background-image:url(../images/title_back_30.png),linear-gradient(bottom,#88C4190,#6FAB0020%,#91C236100%);color:#fff;font-family:微软雅黑,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;height:40px;line-height:38px;padding:2px}
+.codex h2.codexh2{background-color:#64a100;background-image:url(../images/title_back_30.png),linear-gradient(bottom,#88C4190,#6FAB0020%,#91C236100%);color:#fff;font-family:å¾®è½¯é›…é»‘,Helvetica,Arial,sans-serif;font-size:14px;font-weight:700;height:40px;line-height:38px;padding:2px}
 .codex h2.codexh2 span{border:1px dashed #e7e3db;float:left;height:38px;padding-left:10px;width:780px}
 .codex .codexlist{padding:20px}
 .codex .codexlist .codexpost{background:#fff;border:1px solid #eee;margin-bottom:10px;padding:1px}
