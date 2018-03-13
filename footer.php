@@ -15,7 +15,7 @@
             <p class="footer-txt-1"><?php $this->options->description() ?></p>
             <p class="footer-txt-2">神武手游论坛：<a href="#" target="_blank">http://i.funs.cc</a> 回音音乐：<a href="#" class="last" target="_blank">https://www.echoo.cc</a></p>
             <p class="footer-txt-3"><img src="<?php $this->options->themeUrl('picture/logo.jpg'); ?>" /></p>
-            <p class="footer-txt-4">建站: <span class="btime"><?php echo round((time() -   1438617600) / 86400); ?>天</span> - <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="external nofollow">备案不存在的.这辈子是不可能备案的</a></p>
+            <p class="footer-txt-4">建站: <span class="btime"><?php echo round((time() -   1438617600) / 86400); ?>天</span> - <a href="http://www.miitbeian.gov.cn/" target="_blank" rel="external nofollow">备案是不可能的.这辈子是不可能备案的</a></p>
           </div>
         </div>
         <div class="foot-cloud col-md-6 col-lg-5">
